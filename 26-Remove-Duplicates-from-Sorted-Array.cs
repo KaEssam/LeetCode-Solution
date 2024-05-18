@@ -1,6 +1,5 @@
 public class Solution {
     public int RemoveDuplicates(int[] nums) {
-        
         int n = nums.Length;
 
         if (n == 0 || n == 1)
