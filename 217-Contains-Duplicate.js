@@ -3,9 +3,5 @@
  * @return {boolean}
  */
 var containsDuplicate = function(nums) {
-    const set = new Set(nums)
-  if(set.size == nums.length){
-      return false
-  }  
-  return true
+    const s = new Set(nums); return s.size !== nums.length
 };
