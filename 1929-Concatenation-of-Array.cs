@@ -1,12 +1,12 @@
 public class Solution {
     public int[] GetConcatenation(int[] nums) {
+        int n = nums.Length;
+        int[] Ans = new int[n * 2];
 
-        int[] ans = new int[2 * nums.Length];
-
-        for( int i=0; i<nums.Length; i++)
-            ans[i] = ans[i+nums.Length] = nums[i];
-            return ans;
-        
-        
+        for (int i = 0; i < n; i++)
+        {
+            Ans[i] = Ans[n + i] = nums[i];
+        }
+        return Ans;
     }
 }
