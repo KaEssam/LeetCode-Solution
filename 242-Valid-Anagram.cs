@@ -1,16 +1,17 @@
 public class Solution {
     public bool IsAnagram(string s, string t) {
 
-        // convert word to char array
-        char[] ss = s.ToCharArray();
-        char[] tt = t.ToCharArray();
+        if(s.Length != t.Length)
+            return false;
+            
+        char[] sChar = s.ToCharArray();
+        char[] tChar = t.ToCharArray();
 
-        // sort array
-        Array.Sort(ss);
-        Array.Sort(tt);
+        Array.Sort(sChar);
+        Array.Sort(tChar);
 
+        return new string(sChar) == new string(tChar); 
 
-        // check if char of each array equal
-        return new string(ss) == new string(tt);
+        
     }
 }
