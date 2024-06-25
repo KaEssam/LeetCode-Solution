@@ -1,16 +1,17 @@
 public class Solution {
     public int LengthOfLastWord(string s) {
-        int n = s.Length;
-        int result = 0;
-        while (n > 0) {
-            n--;
-            if (s[n] != ' ') {
-                result++;
+        s = s.Trim();
+    
+        int length = 0;
+        for (int i = s.Length - 1; i >= 0; i--) {
+            if (s[i] != ' ') {
+                length++;
             }
-            else if (result > 0) {
-                return result;
+            else if (length > 0) {
+                break;
             }
-        }   
-        return result;
-    }
+        }
+        
+        return length;
+        }
 }
