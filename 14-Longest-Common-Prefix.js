@@ -3,17 +3,12 @@
  * @return {string}
  */
 var longestCommonPrefix = function(strs) {
-
-    let result = strs[0];
-    let length = result.length;
-
-    for (let i = 1; i < strs.length; i++) {
-        while (strs[i].indexOf(result) !== 0) {
-            result = result.substring(0, length - 1);
-            length--;
-
+    if (strs.length === 0) return \\;
+    let prefix = strs[0];
+    for (let i = 1; i < strs.length; i++)
+        while (strs[i].indexOf(prefix) != 0) {
+            prefix = prefix.slice(0, prefix.length - 1);
+            if (prefix === \\) return \\;
         }
-    }
-
-    return result;
+    return prefix;
 };
